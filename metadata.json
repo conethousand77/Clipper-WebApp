@@ -1,0 +1,6 @@
+{
+  "name": "Clip Studio",
+  "description": "AI Video Repurposing Tool untuk Clipper — Potong podcast YouTube jadi klip TikTok/Shorts/Reels viral otomatis lengkap dengan subtitle karaoke, hook headline, b-roll, dan layout modern.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

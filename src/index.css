@@ -1,0 +1,218 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-100 antialiased selection:bg-rose-500 selection:text-white;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color-scheme: dark;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090d16;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #232b3e;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3b4661;
+}
+
+/* Sunburst comic animation background for pop-art cutout */
+.sunburst-bg {
+  background: repeating-conic-gradient(
+    from 0deg,
+    #f43f5e 0deg 15deg,
+    #e11d48 15deg 30deg
+  );
+}
+
+.sunburst-yellow {
+  background: repeating-conic-gradient(
+    from 0deg,
+    #eab308 0deg 15deg,
+    #ca8a04 15deg 30deg
+  );
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  border-color: rgba(244, 63, 94, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -10px rgba(244, 63, 94, 0.15);
+}
+
+/* Subtitle stroke / text shadow for maximum readability */
+.caption-stroke {
+  text-shadow: 
+    -2px -2px 0 #000,  
+     2px -2px 0 #000,
+    -2px  2px 0 #000,
+     2px  2px 0 #000,
+     0px  3px 8px rgba(0,0,0,0.9);
+}
+
+.caption-stroke-thick {
+  text-shadow: 
+    -3px -3px 0 #000,  
+     3px -3px 0 #000,
+    -3px  3px 0 #000,
+     3px  3px 0 #000,
+     0px  4px 12px rgba(0,0,0,0.95);
+}
+
+/* === CAPCUT PRO SUBTITLE STYLES & ANIMATIONS === */
+
+/* 1. CapCut 3D Heavy Outline Stroke */
+.capcut-stroke-3d {
+  -webkit-text-stroke: 2.5px #000;
+  text-shadow: 
+    3px 3px 0 #000,
+   -2px -2px 0 #000,
+    2px -2px 0 #000,
+   -2px  2px 0 #000,
+    2px  2px 0 #000,
+    0px 6px 14px rgba(0, 0, 0, 0.95);
+}
+
+/* 2. CapCut MrBeast Comic Pop Shadow */
+.capcut-stroke-mrbeast {
+  -webkit-text-stroke: 3px #000;
+  text-shadow: 
+    5px 5px 0 #000,
+   -3px -3px 0 #000,
+    3px -3px 0 #000,
+   -3px  3px 0 #000,
+    3px  3px 0 #000,
+    0 10px 20px rgba(0, 0, 0, 0.9);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+/* 3. CapCut Highlighter Marker Effect */
+.capcut-marker {
+  position: relative;
+  z-index: 1;
+}
+
+.capcut-marker::before {
+  content: "";
+  position: absolute;
+  inset: -3px -8px;
+  background: #facc15;
+  transform: rotate(-1.5deg);
+  border-radius: 6px;
+  z-index: -1;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.capcut-marker-green::before {
+  background: #10b981;
+  transform: rotate(1deg);
+}
+
+.capcut-marker-cyan::before {
+  background: #06b6d4;
+  transform: rotate(-1deg);
+}
+
+.capcut-marker-red::before {
+  background: #ef4444;
+  transform: rotate(1.5deg);
+}
+
+/* 4. CapCut Neon Cyber Glow */
+.capcut-neon-cyan {
+  text-shadow: 
+    0 0 10px rgba(6, 182, 212, 1),
+    0 0 20px rgba(6, 182, 212, 0.7),
+    0 0 35px rgba(6, 182, 212, 0.5),
+    0 3px 6px rgba(0, 0, 0, 0.9);
+}
+
+.capcut-neon-pink {
+  text-shadow: 
+    0 0 10px rgba(244, 63, 94, 1),
+    0 0 20px rgba(244, 63, 94, 0.7),
+    0 0 35px rgba(244, 63, 94, 0.5),
+    0 3px 6px rgba(0, 0, 0, 0.9);
+}
+
+/* CapCut Spring Bounce Keyframe Animation */
+@keyframes capcutBounce {
+  0% {
+    transform: scale(0.95) translateY(0);
+  }
+  30% {
+    transform: scale(1.26) translateY(-5px) rotate(-1.5deg);
+  }
+  60% {
+    transform: scale(1.14) translateY(-2px);
+  }
+  100% {
+    transform: scale(1.18) translateY(-3px);
+  }
+}
+
+.animate-capcut-bounce {
+  display: inline-block;
+  animation: capcutBounce 0.28s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* CapCut Pop Zoom Keyframe Animation */
+@keyframes capcutZoom {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.22);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.12);
+    opacity: 1;
+  }
+}
+
+.animate-capcut-zoom {
+  display: inline-block;
+  animation: capcutZoom 0.22s ease-out forwards;
+}
+
+/* CapCut Glow Pulse */
+@keyframes capcutPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 10px rgba(250, 204, 21, 0.8));
+    transform: scale(1.1);
+  }
+  50% {
+    filter: drop-shadow(0 0 22px rgba(250, 204, 21, 1));
+    transform: scale(1.18);
+  }
+}
+
+.animate-capcut-pulse {
+  display: inline-block;
+  animation: capcutPulse 0.4s ease-in-out infinite alternate;
+}
